@@ -1,0 +1,50 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container1 {
+    max-width: 60rem; /* 960px / 16px = 60rem */
+    padding: 1.25rem; /* 20px / 16px = 1.25rem */
+    margin: 0 auto;
+}
+
+.container1 h1, .container1 p {
+    margin: 0 0 1.25rem; /* 20px / 16px = 1.25rem */
+    font-weight: normal;
+}
+
+.container1 h1 {
+    color: transparent; /* Ensures the gradient is visible */
+    font-size: 3.125rem; /* 50px / 16px = 3.125rem */
+    background: linear-gradient(90deg, #f59031, #502e0f);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.container1 p {
+    color: transparent;
+    font-size: 1.25rem; /* 20px / 16px = 1.25rem */
+    background: linear-gradient(60deg, #f59031, #502e0f);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.logo {
+    margin-top: -5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo img {
+    width: auto; /* Adjust based on your design needs */
+    height: auto; /* Maintains the aspect ratio */
+}
