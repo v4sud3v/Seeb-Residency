@@ -1,65 +1,332 @@
-body, html {
-    height: 100%;
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Ensure consistent box-sizing */
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+/* Global Box-Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed; /* Keep the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    padding: 1rem 2rem;
+    z-index: 1000;
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Vertically align items */
+    background: rgba(255, 254, 254, 0.9); /* Slight transparency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Smooth backdrop blur effect */
+    overflow: hidden;
+}
+
+/* Navbar Logo */
+.navbar .logo img {
+    max-width: 250px; /* Limit logo size */
+    height: auto;
+}
+
+/* Navbar Links */
+.navbar ul {
+    list-style: none;
+    display: flex; /* Align links horizontally */
+    gap: 2rem; /* Space between links */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: rgb(176, 36, 36);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('images/hero.jpg') center/cover no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     flex-direction: column;
-    padding: 0 1rem; /* Add some padding for small screens */
+    justify-content: space-between;
+    text-align: center;
+    color: white;
 }
 
-.container1 {
-    max-width: 60rem; /* 960px / 16px = 60rem */
-    padding: 1.25rem; /* 20px / 16px = 1.25rem */
-    margin: 0 auto;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-.container1 h1, .container1 p {
-    margin: 0 0 1.25rem; /* 20px / 16px = 1.25rem */
-    font-weight: normal;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 20%;
 }
 
-.container1 h1 {
-    color: transparent; /* Ensures the gradient is visible */
-    font-size: 3.125rem; /* 50px / 16px = 3.125rem */
-    background: linear-gradient(90deg, #f59031, #502e0f);
-    -webkit-background-clip: text;
-    background-clip: text;
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.container1 p {
-    color: transparent;
-    font-size: 1.25rem; /* 20px / 16px = 1.25rem */
-    background: linear-gradient(60deg, #f59031, #502e0f);
-    -webkit-background-clip: text;
-    background-clip: text;
+.hero-content p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
-.logo {
-    margin-top: -5%;
+.booking-box {
     display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    flex-wrap: wrap;
     justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.booking-box .input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.booking-box .btn {
+    background: #d4af37;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.booking-box .btn:hover {
+    background: #b88c2a;
+}
+
+/* About Section */
+.about {
+    position: relative;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    background: none;
+}
+
+/* Parallax Background */
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('images/about-background.jpg') center/cover no-repeat fixed;
+    z-index: 1;
+    opacity: 0.9; /* Adjusted for a more premium look */
+}
+
+/* About Overlay Enhancements */
+.about-overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8); /* Darker overlay */
+    padding: 50px;
+    border-radius: 15px; /* Slightly more rounded for modern design */
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    color: #eee; /* Softer text color */
+}
+
+.about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px; /* Add spacing for elegance */
+    color: #d4af37; /* Gold color for headings */
+    margin-bottom: 25px;
+}
+
+.about p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Grid Items */
+.grid-item {
+    background: rgba(255, 255, 255, 0.1); /* Transparent card */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid rgba(255, 215, 0, 0.6); /* Gold separator */
+}
+
+.image-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1); /* Smooth zoom effect */
+}
+
+/* Titles and Text */
+.grid-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: #d4af37;
+}
+
+.grid-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f1f1f1;
+}
+
+/* Divider */
+.about-overlay::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #d4af37;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
-.logo img {
-    width: 100%; /* Ensure image scales properly */
-    max-width: 300px; /* Set a maximum width for the image */
-    height: auto; /* Maintains the aspect ratio */
+.contact-info p {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
 }
 
-/* Media Queries for Mobile Devices */
+.contact-info .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info .icon:hover {
+    color: gold;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer .gold {
+    color: #d4af37;
+}
+
+/* Responsive Layout */
 @media (max-width: 768px) {
-    .container1 h1 {
-        font-size: 2rem; /* Smaller font size on mobile */
+    .navbar {
+        flex-direction: column; /* Stack navbar vertically */
+        padding: 1rem;
+        align-items: center;
     }
-    .container1 p {
-        font-size: 1rem; /* Smaller font size on mobile */
-    }
-    .logo {
-        margin-top: 0; /* Adjust logo positioning on mobile */
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
+
+
+
