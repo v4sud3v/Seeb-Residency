@@ -11,20 +11,22 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-      <img src="images/SeebResidencylogo1.png" alt="Hotel Logo">
+        <img src="images/SeebResidencylogo1.png" alt="Hotel Logo">
     </div>
-    <nav>
-      <ul>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="navbar-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
+    </ul>
   </header>
-
+  
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
@@ -34,10 +36,6 @@
 
     <!-- Booking Inquiry Form -->
     <form id="inquiry-form" class="booking-box">
-      <!-- Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value=".">
-
-      <!-- Form Fields -->
       <input type="date" name="Check-in Date" class="input" required>
       <input type="date" name="Check-out Date" class="input" required>
       <select name="Number of Rooms" class="input" required>
@@ -45,11 +43,10 @@
         <option value="2 Rooms">2 Rooms</option>
         <option value="3 Rooms">3 Rooms</option>
       </select>
+      <input type="tel" name="phone" class="input" placeholder="Phone Number" pattern="[0-9]{10}" required>
       <button type="submit" class="btn">Send Inquiry</button>
     </form>
-
-    <!-- Success/Failure Messages -->
-    <div id="form-response" class="response-message"></div>
+    <div id="form-response"></div>
   </section>
 
   <!-- About Section -->
