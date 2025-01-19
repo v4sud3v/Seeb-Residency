@@ -1,6 +1,7 @@
 /* General Styles */
 html {
     scroll-behavior: smooth;
+    height: -webkit-fill-available;
 }
 
 html, body {
@@ -13,6 +14,8 @@ html, body {
 body {
     font-family: 'Playfair Display', serif;
     color: #333;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 /* Global Box-Sizing */
@@ -883,37 +886,37 @@ body {
     }
 
     .slider-nav {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1.2rem;
+        width: 2.5rem;  /* 40px */
+        height: 2.5rem; /* 40px */
+        font-size: 1.2rem; /* 19.2px */
     }
 
     .slider-nav.prev {
-        left: 1rem;
+        left: 1rem; /* 16px */
     }
 
     .slider-nav.next {
-        right: 1rem;
+        right: 1rem; /* 16px */
     }
 
     .slider-dots {
-        bottom: 1.5rem;
+        bottom: 1.5rem; /* 24px */
     }
 }
 
 @media (max-width: 480px) {
     .location-titles {
-        padding: 1.25rem 1rem;
+        padding: 1.25rem 1rem; /* 20px 16px */
     }
 
     .overlay-text {
         width: 94%;
         left: 3%;
-        padding: 1.25rem;
+        padding: 1.25rem; /* 20px */
     }
 
     .map-info {
-        padding: 1rem;
+        padding: 1rem; /* 16px */
     }
 }
 
@@ -922,6 +925,10 @@ body {
     .location,
     .location-wrapper,
     .location-slide {
+        height: -webkit-fill-available;
+    }
+
+    .location-content {
         height: -webkit-fill-available;
     }
 }
@@ -961,5 +968,24 @@ body {
 /* Dynamic Viewport Height Fix */
 :root {
     --vh: 1vh;
+    font-size: 16px; /* Base font size */
 }
 
+/* Add responsive viewport fixes */
+@media screen and (max-width: 30rem) {
+    html {
+        font-size: 14px; /* Slightly smaller base font size for mobile */
+    }
+}
+
+@media screen and (min-width: 30.063rem) and (max-width: 48rem) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 48.063rem) {
+    html {
+        font-size: 16px;
+    }
+}
