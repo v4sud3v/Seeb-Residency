@@ -696,8 +696,7 @@ body {
 }
 
 /* Enhanced Responsive Styles */
-@media (max-width: 48rem) {
-    /* Navbar Optimizations */
+@media (max-width: 48rem) { /* 768px */
     .navbar {
         flex-wrap: wrap;
         padding: 0.75rem 1.25rem;
@@ -724,7 +723,7 @@ body {
         -webkit-backdrop-filter: blur(10px);
         padding: 1rem 0;
         z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 4px 12px */
         transition: all 0.3s ease;
     }
 
@@ -778,7 +777,7 @@ body {
 
     .location-wrapper {
         height: 100%;
-        min-height: 500px;
+        min-height: 31.25rem; /* 500px */
     }
 
     .location-container {
@@ -820,9 +819,9 @@ body {
     }
 
     .map-container {
-        height: 300px;
+        height: 18.75rem; /* 300px */
         margin: 0;
-        border-radius: 0.5rem;
+        border-radius: 0.5rem; /* 8px */
     }
 
     .map-info {
@@ -831,13 +830,13 @@ body {
         bottom: 0;
         width: 100%;
         max-width: none;
-        margin-top: -80px;
+        margin-top: -5rem; /* -80px */
         padding: 1.25rem;
-        border-radius: 1rem;
+        border-radius: 1rem; /* 16px */
         background: rgba(26, 26, 26, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* -4px 20px */
     }
 
     .map-info h3 {
