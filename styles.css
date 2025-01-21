@@ -220,26 +220,17 @@ body {
     color: white;
 }
 
+
 /* About Section */
 .about {
     position: relative;
-    padding: 6.25rem 1.25rem; /* 6.25rem 1.25rem */
-    color: white;
+    padding: 4rem 1rem; /* Reduced padding for better mobile fit */
+    background: rgba(26, 26, 26, 0.9) !important;
     text-align: center;
     overflow: hidden;
     background: none;
-}
-
-/* Parallax Background */
-.about-background {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: #1a1a1a;
-    z-index: 1;
-    opacity: 0.9;
+    box-sizing: border-box;
 }
 
 /* About Overlay Enhancements */
@@ -247,11 +238,12 @@ body {
     position: relative;
     z-index: 2;
     background: rgba(0, 0, 0, 0.8);
-    padding: 3.125rem; /* 3.125rem */
-    border-radius: 0.9375rem; /* 0.9375rem */
-    max-width: 68.75rem; /* 68.75rem */
+    padding: 2rem; /* Reduced padding */
+    border-radius: 0.9375rem;
+    width: 95%; /* Use percentage instead of max-width */
+    max-width: 1200px; /* Set a max-width for very large screens */
     margin: 0 auto;
-    box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.3); /* 0.75rem 2.5rem */
+    box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.3);
     color: #eee;
 }
 
@@ -272,37 +264,54 @@ body {
     margin: 0 auto 3.125rem; /* 3.125rem */
 }
 
-/* Grid Layout */
+/* Grid Layout - Updated for better responsiveness */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); /* 18.75rem */
-    gap: 1.875rem; /* 1.875rem */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller minimum width */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1400px; /* Maximum width for large screens */
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
-/* Grid Items */
+/* Grid Items - Updated for consistency */
 .grid-item {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 0.9375rem; /* 0.9375rem */
+    border-radius: 0.9375rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1); /* 0.625rem 1.25rem */
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Maximum width for each item */
+    margin: 0 auto; /* Center items */
+    width: 100%;
 }
+
 
 .grid-item:hover {
     transform: translateY(-0.625rem); /* 0.625rem */
     box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.2); /* 0.9375rem 1.875rem */
 }
 
-/* Image Container */
+/* Image Container - Updated for consistent sizing */
 .image-container {
     position: relative;
     overflow: hidden;
-    border-bottom: 0.3125rem solid rgba(255, 215, 0, 0.6); /* 0.3125rem */
+    border-bottom: 0.3125rem solid rgba(255, 215, 0, 0.6);
+    width: 100%;
+    padding-top: 66.67%; /* 2:3 aspect ratio */
 }
 
 .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 12.5rem; /* 12.5rem */
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -723,7 +732,7 @@ body {
         -webkit-backdrop-filter: blur(10px);
         padding: 1rem 0;
         z-index: 1000;
-        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 4px 12px */
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
     }
 
@@ -777,7 +786,7 @@ body {
 
     .location-wrapper {
         height: 100%;
-        min-height: 31.25rem; /* 500px */
+        min-height: 31.25rem;
     }
 
     .location-container {
@@ -819,9 +828,9 @@ body {
     }
 
     .map-container {
-        height: 18.75rem; /* 300px */
+        height: 18.75rem;
         margin: 0;
-        border-radius: 0.5rem; /* 8px */
+        border-radius: 0.5rem;
     }
 
     .map-info {
@@ -830,13 +839,13 @@ body {
         bottom: 0;
         width: 100%;
         max-width: none;
-        margin-top: -5rem; /* -80px */
+        margin-top: -5rem;
         padding: 1.25rem;
-        border-radius: 1rem; /* 16px */
+        border-radius: 1rem;
         background: rgba(26, 26, 26, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* -4px 20px */
+        box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.2);
     }
 
     .map-info h3 {
@@ -885,37 +894,37 @@ body {
     }
 
     .slider-nav {
-        width: 2.5rem;  /* 40px */
-        height: 2.5rem; /* 40px */
-        font-size: 1.2rem; /* 19.2px */
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
     }
 
     .slider-nav.prev {
-        left: 1rem; /* 16px */
+        left: 1rem;
     }
 
     .slider-nav.next {
-        right: 1rem; /* 16px */
+        right: 1rem;
     }
 
     .slider-dots {
-        bottom: 1.5rem; /* 24px */
+        bottom: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .location-titles {
-        padding: 1.25rem 1rem; /* 20px 16px */
+        padding: 1.25rem 1rem;
     }
 
     .overlay-text {
         width: 94%;
         left: 3%;
-        padding: 1.25rem; /* 20px */
+        padding: 1.25rem;
     }
 
     .map-info {
-        padding: 1rem; /* 16px */
+        padding: 1rem;
     }
 }
 
@@ -967,13 +976,13 @@ body {
 /* Dynamic Viewport Height Fix */
 :root {
     --vh: 1vh;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
 /* Add responsive viewport fixes */
 @media screen and (max-width: 30rem) {
     html {
-        font-size: 14px; /* Slightly smaller base font size for mobile */
+        font-size: 14px;
     }
 }
 
