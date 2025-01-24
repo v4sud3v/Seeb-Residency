@@ -257,7 +257,7 @@ body {
 }
 
 .about p {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.3rem; /* 1.3rem */
     line-height: 1.8;
     max-width: 50rem; /* 50rem */
@@ -267,29 +267,31 @@ body {
 /* Grid Layout - Updated for better responsiveness */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller minimum width */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 1.5rem;
     width: 100%;
-    max-width: 1400px; /* Maximum width for large screens */
+    max-width: 1400px; 
     margin: 0 auto;
     padding: 1rem;
     box-sizing: border-box;
+    justify-content: center; /* Center the grid */
 }
 
-/* Grid Items - Updated for consistency */
 .grid-item {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.9375rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
-    height: 100%; /* Ensure consistent height */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    max-width: 400px; /* Maximum width for each item */
-    margin: 0 auto; /* Center items */
+    max-width: 100%; /* Allow full width within grid */
     width: 100%;
+    justify-content: center; /* Fix typo */
+    align-items: center; /* Ensure content inside is centered */
 }
+
 
 
 .grid-item:hover {
