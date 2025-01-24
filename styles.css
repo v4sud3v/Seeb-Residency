@@ -292,6 +292,10 @@ body {
     align-items: center; /* Ensure content inside is centered */
 }
 
+.grid-item p {
+    padding: 0 1rem; /* Add padding to the paragraph */
+    font-size: 1rem; /* Reduced font size */
+}
 
 
 .grid-item:hover {
@@ -688,8 +692,7 @@ body {
 }
 
 .nearby-list {
-    columns: 2;
-    column-gap: 2rem;
+    columns: 1;
 }
 
 .footer-bottom {
@@ -880,6 +883,17 @@ body {
 
     .footer-section {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section ul,
+    .footer-section p {
+        display: inline-block;
+        text-align: left;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .footer-section h4::after {
