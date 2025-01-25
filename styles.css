@@ -836,6 +836,8 @@ body {
         height: 18.75rem;
         margin: 0;
         border-radius: 0.5rem;
+        position: relative;
+        z-index: 1;
     }
 
     .map-info {
@@ -851,6 +853,8 @@ body {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        pointer-events: auto;
     }
 
     .map-info h3 {
@@ -864,12 +868,15 @@ body {
     }
 
     .direction-btn {
+        display: block; /* Change to block */
         width: 100%;
         text-align: center;
         padding: 0.75rem;
-        font-weight: 500;
+        position: static; /* Reset positioning */
+        z-index: 20;
+        pointer-events: auto; /* Ensure button is clickable */
     }
-
+    
     /* Footer Optimizations */
     .footer-content {
         grid-template-columns: 1fr;
