@@ -162,8 +162,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const directionBtn = document.querySelector('.direction-btn');
     if (directionBtn) {
         directionBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href = this.href;
+            // Specifically for mobile devices
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                window.open(this.href, '_blank');
+            } else {
+                window.location.href = this.href;
+            }
         });
     }
 });
