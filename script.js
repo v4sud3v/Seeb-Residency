@@ -157,3 +157,13 @@ window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const directionBtn = document.querySelector('.direction-btn');
+    if (directionBtn) {
+        directionBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = this.href;
+        });
+    }
+});
